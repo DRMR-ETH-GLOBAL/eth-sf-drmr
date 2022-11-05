@@ -21,9 +21,9 @@ const Dashboard = () => {
       <div className="grid grid-cols-2 gap-4 px-4 py-5 sm:p-6">
         <div className="bg-white shadow sm:rounded-lg">
           <div className="px-4 py-5 sm:p-6">
-            <h3 className="text-lg font-medium leading-6 text-gray-900">Create BlockRM Certificate</h3>
+            <h3 className="text-lg font-medium leading-6 text-gray-900">Create DRMR Credential</h3>
             <div className="mt-2 max-w-xl text-sm text-gray-500">
-              <p>Verify your identity, residence, or other parameters and receive a BlockRM certificate issued to your Ethereum address.</p>
+              <p>Verify your identity, residence, or other parameters and receive a DRMR certificate.</p>
             </div>
             <div className="mt-5">
               <button
@@ -42,9 +42,9 @@ const Dashboard = () => {
 
         <div className="bg-white shadow sm:rounded-lg">
           <div className="px-4 py-5 sm:p-6">
-            <h3 className="text-lg font-medium leading-6 text-gray-900">Validate BlockRM Certificate</h3>
+            <h3 className="text-lg font-medium leading-6 text-gray-900">Validate DRMR Credential</h3>
             <div className="mt-2 max-w-xl text-sm text-gray-500">
-              <p>Validate the verification status of an Ethereum address by checking against an issued BlockRM certificate.</p>
+              <p>Validate the verification status of a DRMR Credential.</p>
             </div>
             <div className="mt-5">
               <button
