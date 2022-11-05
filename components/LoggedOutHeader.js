@@ -20,7 +20,7 @@ export default function Header() {
               />
             </a> */}
               <a href="/" className="text-2xl font-medium text-gray-500 hover:text-gray-900">
-                Block<span className="text-blue-600">RM</span>
+                DRMR
               </a>
             </div>
             {!session ? (
