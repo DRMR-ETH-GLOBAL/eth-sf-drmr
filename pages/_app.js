@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
       initialSession={pageProps.initialSession}
     >
       <Web3ReactProvider getLibrary={library}>
-        <Layout pageTitle='BlockRM'>
+        <Layout pageTitle='DRMR'>
           <Component {...pageProps} />
         </Layout>
       </Web3ReactProvider>
