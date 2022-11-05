@@ -37,7 +37,7 @@ const LoggedInAppFrame = (props) => {
                   <div className="flex">
                     <div className="flex flex-shrink-0 items-center">
                       <a href="/" className="text-2xl font-medium text-gray-500 hover:text-gray-900">
-                        Block<span className="text-blue-600">RM</span>
+                        DRMR
                       </a>
                     </div>
                     <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">

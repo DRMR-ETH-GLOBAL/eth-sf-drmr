@@ -23,7 +23,7 @@ export default function Login() {
     <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="w-full max-w-md space-y-8">
         <div>
-          <h1 className="mt-8 text-center text-3xl font-semibold text-gray-500">Block<span classNameName="text-blue-600">RM</span></h1>
+          <h1 className="mt-8 text-center text-3xl font-semibold text-gray-500">DRMR</h1>
           <h2 className="mt-5 text-center text-2xl text-gray-900">Log in via magic link with your email below</h2>
         </div>
         <form className="mt-8 space-y-6" action="#" method="POST">
