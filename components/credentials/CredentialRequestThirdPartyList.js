@@ -10,20 +10,20 @@ const CredentialRequestThirdPartyList = ({ requests, session }) => {
         <tr>
           <th
             scope="col"
-            className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6 md:pl-0"
+            className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-500 sm:pl-6 md:pl-0"
           >
             Created
           </th>
-          <th scope="col" className="py-3.5 px-3 text-left text-sm font-semibold text-gray-900">
+          <th scope="col" className="py-3.5 px-3 text-left text-sm font-semibold text-gray-500">
             Requested Third Party
           </th>
-          <th scope="col" className="py-3.5 px-3 text-left text-sm font-semibold text-gray-900">
+          <th scope="col" className="py-3.5 px-3 text-left text-sm font-semibold text-gray-500">
             Type
           </th>
-          <th scope="col" className="py-3.5 px-3 text-left text-sm font-semibold text-gray-900">
+          <th scope="col" className="py-3.5 px-3 text-left text-sm font-semibold text-gray-500">
             Issuer
           </th>
-          <th scope="col" className="py-3.5 px-3 text-left text-sm font-semibold text-gray-900">
+          <th scope="col" className="py-3.5 px-3 text-left text-sm font-semibold text-gray-500">
             Status
           </th>
           <th scope="col" className="relative py-3.5 pl-3 pr-4 sm:pr-6 md:pr-0">
