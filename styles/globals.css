@@ -6,4 +6,7 @@
   .btn-primary {
     @apply inline-flex items-center rounded-md border border-transparent bg-green-500 px-4 py-2 text-sm font-medium text-grey-1000 shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2;
   }
+  .btn-tertiary {
+    @apply rounded-md border border-grey-600 py-2 px-4 text-sm font-medium text-gray-300 shadow-sm hover:bg-grey-800 focus:outline-none focus:ring-2 focus:ring-greene focus:ring-offset-2
+  }
 }
