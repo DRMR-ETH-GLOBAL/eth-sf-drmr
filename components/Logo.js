@@ -21,5 +21,3 @@ export default function Logo(props) {
     </svg>
   )
 }
-
-// {...props}
