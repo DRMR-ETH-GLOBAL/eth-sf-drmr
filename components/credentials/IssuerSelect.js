@@ -2,19 +2,15 @@ import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 
-const attributes = [
-  { id: 1, name: 'DRMR', },
-  { id: 2, name: 'Jumio', },
-  { id: 3, name: 'Veriff', },
-]
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Example() {
-  const [selected, setSelected] = useState(attributes[0])
-
+export default function IssuerSelect({
+  issuers,
+  selected,
+  setSelected,
+}) {
   return (
     <Listbox value={selected} onChange={setSelected}>
       {({ open }) => (
@@ -36,7 +32,7 @@ export default function Example() {
               leaveTo="opacity-0"
             >
               <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                {attributes.map((attribute) => (
+                {issuers.map((attribute) => (
                   <Listbox.Option
                     key={attribute.id}
                     className={({ active }) =>

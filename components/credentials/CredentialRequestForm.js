@@ -1,56 +1,21 @@
-import CredentialSelect from './CredentialSelect'
+import CredentialTypeSelect from './CredentialTypeSelect'
 import IssuerSelect from './IssuerSelect'
+import { useRouter } from 'next/router'
 
 export default function CredentialForm({
+  attributes,
   heading,
-  attribute,
-  onAttributeChange,
-  dataType,
-  onDataTypeChange,
-  dataValue,
-  onDataValueChange,
-  attributeDescription,
-  onAttributeDescriptionChange,
+  typeSelected,
+  setTypeSelected,
+  issuers,
+  issuerSelected,
+  setIssuerSelected,
   onSubmit
 }) {
+  const router = useRouter()
+
   return (
-    // <Form onSubmit={onSubmit}>
-    //   <Col>
-    //     <Label>Name
-    //       <Input
-    //         name='name'
-    //         value={name}
-    //         placeholder='Name'
-    //         onChange={onNameChange}
-    //       />
-    //     </Label>
-    //   </Col>
-
-    //   <Col>
-    //     <Label>Description
-    //       <Input
-    //         name='Description'
-    //         value={description}
-    //         placeholder='Description'
-    //         onChange={onDescriptionChange}
-    //       />
-    //     </Label>
-    //   </Col>
-
-    //   <Col>
-    //     <Label>Token Name
-    //       <Input
-    //         name='Token Name'
-    //         value={tokenName}
-    //         placeholder='Token Name'
-    //         onChange={onTokenNameChange}
-    //       />
-    //     </Label>
-    //   </Col>
-
-    //   <Button type='submit'>Submit</Button>
-    // </Form>
-    <form className="space-y-8 divide-y divide-gray-200">
+    <form className="space-y-8 divide-y divide-gray-200" onSubmit={onSubmit}>
       <div className="space-y-8 divide-y divide-gray-200 sm:space-y-5">
         <div className="space-y-6 sm:space-y-5">
           <div>
@@ -62,7 +27,12 @@ export default function CredentialForm({
 
           <div className="space-y-6 sm:space-y-5">
             <div className="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
-              <CredentialSelect></CredentialSelect>
+              <CredentialTypeSelect
+                attributes={attributes}
+                selected={typeSelected}
+                setSelected={setTypeSelected}
+              >
+              </CredentialTypeSelect>
             </div>
 
             <div className="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
@@ -106,7 +76,12 @@ export default function CredentialForm({
       </div>
 
       <div className="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
-        <IssuerSelect></IssuerSelect>
+        <IssuerSelect
+          issuers={issuers}
+          selected={issuerSelected}
+          setSelected={setIssuerSelected}
+        >
+        </IssuerSelect>
       </div>
 
       <div className="pt-5">
@@ -114,6 +89,9 @@ export default function CredentialForm({
           <button
             type="button"
             className="rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            onClick={async () => {
+              router.replace(`/credentials`)
+            }}
           >
             Cancel
           </button>

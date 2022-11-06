@@ -2,29 +2,20 @@ import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 
-const attributes = [
-  { id: 1, name: 'Name', requiredDocumentation: 'Please provide a photocopy of a government-issued identification card, driver\'s license, or passport.' },
-  { id: 2, name: 'Birth Date', requiredDocumentation: 'Please provide a photocopy of a government-issued identification card, driver\'s license, or passport.' },
-  { id: 3, name: 'Country of Residence', requiredDocumentation: 'Please provide a photocopy of a government-issued identification card, driver\'s license, or passport, as well as a utility bill issued within the last six months sent to your address.' },
-  { id: 4, name: 'Nationality', requiredDocumentation: 'Please provide a photocopy of a government-issued identification card, driver\'s license, or passport.' },
-  { id: 5, name: 'OFAC Sanction', requiredDocumentation: 'Please provide a photocopy of a government-issued identification card, driver\'s license, or passport.' },
-  { id: 6, name: 'Ethereum Address', requiredDocumentation: '' },
-  { id: 7, name: 'Near Address', requiredDocumentation: '' },
-  { id: 8, name: 'Bitcoin Address', requiredDocumentation: '' },
-]
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Example() {
-  const [selected, setSelected] = useState(attributes[0])
-
+export default function CredentialTypeSelect({
+  attributes,
+  selected,
+  setSelected,
+}) {
   return (
     <Listbox value={selected} onChange={setSelected}>
       {({ open }) => (
         <>
-          <Listbox.Label className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">Credential</Listbox.Label>
+          <Listbox.Label className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">Credential Type</Listbox.Label>
           <div className="relative mt-1">
             <Listbox.Button className="relative w-full cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm">
               <span className="block truncate">{selected.name}</span>

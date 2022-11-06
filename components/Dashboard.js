@@ -50,7 +50,7 @@ const Dashboard = () => {
   return (
     <LoggedInAppFrame headerTitle="Dashboard">
       <div>
-        {/* {!hasPolygonId &&
+        {!hasPolygonId &&
           <div className="mb-5 rounded-md bg-yellow-50 p-4">
             <div className="flex">
               <div className="flex-shrink-0">
@@ -74,7 +74,7 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-        } */}
+        }
         <div className="mb-5 bg-white shadow sm:rounded-lg">
           <div className="px-4 py-5 sm:p-6">
             <h3 className="text-lg font-medium leading-6 text-gray-900">Create Credential</h3>
