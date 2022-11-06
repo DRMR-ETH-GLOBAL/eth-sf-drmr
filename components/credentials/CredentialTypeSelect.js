@@ -74,7 +74,7 @@ export default function CredentialTypeSelect({
                   type="text"
                   name="cryptoAddress"
                   id="cryptoAddress"
-                  className="block w-full rounded-md border-grey-600 bg-grey-900 shadow-sm focus:border-greene focus:ring-greene sm:text-sm"
+                  className="form-input"
                   placeholder={`Input your ${selected.name}`}
                 />
               </div>
@@ -88,7 +88,7 @@ export default function CredentialTypeSelect({
                   type="text"
                   name="cryptoAddress"
                   id="cryptoAddress"
-                  className="block w-full rounded-md border-grey-600 bg-grey-900 shadow-sm focus:border-greene focus:ring-greene sm:text-sm"
+                  className="form-input"
                   placeholder={`Input your ${selected.name}`}
                 />
               </div>
@@ -102,7 +102,7 @@ export default function CredentialTypeSelect({
                   type="text"
                   name="cryptoAddress"
                   id="cryptoAddress"
-                  className="block w-full rounded-md border-grey-600 bg-grey-900 shadow-sm focus:border-greene focus:ring-greene sm:text-sm"
+                  className="form-input"
                   placeholder={`Input your ${selected.name}`}
                 />
               </div>

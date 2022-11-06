@@ -65,49 +65,52 @@ export default function Account({ session, user }) {
   return (
     <LoggedInAppFrame headerTitle="Account">
       <div className="form-widget">
-        <div>
-          <label htmlFor="email">Email</label>
-          <input id="email" type="text" value={session.user.email} disabled />
+        <div className="pt-5">
+          <label className="text-white" htmlFor="email">Email</label>
+          <input id="email" className="form-input" type="text" value={session.user.email} disabled />
         </div>
-        <div>
-          <label htmlFor="username">Username</label>
+
+        <div className="pt-5">
+          <label className="text-white" htmlFor="username">Username</label>
           <input
             id="username"
             type="text"
+            className="form-input"
             value={username || ''}
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
 
-        <div>
-          <label htmlFor="polygonId">Polygon ID</label>
+        <div className="pt-5">
+          <label className="text-white" htmlFor="polygonId">Polygon ID</label>
           <input
             id="polygonId"
             type="polygonId"
+            className="form-input"
             value={polygonId || ''}
             onChange={(e) => setPolygonId(e.target.value)}
           />
         </div>
 
-        <div>
-          <button
-            type="button"
-            className="inline-flex items-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-            onClick={() => updateProfile({ polygonId })}
-            disabled={loading}
-          >
-            {loading ? 'Loading ...' : 'Update'}
-          </button>
-        </div>
+        <div className="pt-5">
+          <div className="flex justify-end">
+            <button
+              type="button"
+              className="btn-tertiary"
+              onClick={() => supabase.auth.signOut()}
+            >
+              Sign Out
+            </button>
 
-        <div>
-          <button
-            type="button"
-            className="inline-flex items-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-            onClick={() => supabase.auth.signOut()}
-          >
-            Sign Out
-          </button>
+            <button
+              type="button"
+              className="ml-3 btn-primary"
+              onClick={() => updateProfile({ polygonId })}
+              disabled={loading}
+            >
+              {loading ? 'Loading ...' : 'Update'}
+            </button>
+          </div>
         </div>
       </div>
     </LoggedInAppFrame>
