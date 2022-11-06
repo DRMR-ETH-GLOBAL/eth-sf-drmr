@@ -5,7 +5,7 @@ const CredentialRequestThirdPartyList = ({ requests, session }) => {
   const router = useRouter()
 
   return (
-    <table className="min-w-full divide-y divide-gray-300">
+    <table className="min-w-full divide-y divide-grey-800">
       <thead>
         <tr>
           <th
@@ -31,7 +31,7 @@ const CredentialRequestThirdPartyList = ({ requests, session }) => {
           </th>
         </tr>
       </thead>
-      <tbody className="divide-y divide-gray-200">
+      <tbody className="divide-y divide-grey-800">
         {requests.map((request) => (
           <tr key={request.id}>
             <td className="whitespace-nowrap py-4 px-3 text-sm text-gray-500">{request.created_at}</td>
