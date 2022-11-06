@@ -71,17 +71,6 @@ export default function Account({ session, user }) {
         </div>
 
         <div className="pt-5">
-          <label className="text-white" htmlFor="username">Username</label>
-          <input
-            id="username"
-            type="text"
-            className="form-input"
-            value={username || ''}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
-
-        <div className="pt-5">
           <label className="text-white" htmlFor="polygonId">Polygon ID</label>
           <input
             id="polygonId"
