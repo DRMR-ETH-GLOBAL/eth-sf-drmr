@@ -36,8 +36,8 @@ const Dashboard = () => {
         throw error
       }
 
-      if (data && data.polygon_id_identifier == null) {
-        setHasPolygonId(true)
+      if (data && (data.polygon_id_identifier == null || data.polygon_id_identifier == '')) {
+        setHasPolygonId(false)
       }
     } catch (error) {
       alert('Error loading user data!')
