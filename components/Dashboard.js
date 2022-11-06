@@ -10,7 +10,7 @@ const Dashboard = () => {
   const session = useSession()
   const router = useRouter()
   const { chainId, account, activate, active } = useWeb3React()
-  const [hasPolygonId, setHasPolygonId] = useState(false)
+  const [hasPolygonId, setHasPolygonId] = useState(true)
   const [loading, setLoading] = useState(true)
   const supabase = useSupabaseClient()
 
@@ -36,7 +36,7 @@ const Dashboard = () => {
         throw error
       }
 
-      if (data && data.polygon_id_identifier != null) {
+      if (data && data.polygon_id_identifier == null) {
         setHasPolygonId(true)
       }
     } catch (error) {
