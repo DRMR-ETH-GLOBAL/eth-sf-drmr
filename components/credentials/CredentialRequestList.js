@@ -14,6 +14,9 @@ const CredentialRequestList = ({ requests }) => {
             Created
           </th>
           <th scope="col" className="py-3.5 px-3 text-left text-sm font-semibold text-gray-900">
+            Requestor
+          </th>
+          <th scope="col" className="py-3.5 px-3 text-left text-sm font-semibold text-gray-900">
             Type
           </th>
           <th scope="col" className="py-3.5 px-3 text-left text-sm font-semibold text-gray-900">
@@ -31,6 +34,7 @@ const CredentialRequestList = ({ requests }) => {
         {requests.map((request) => (
           <tr key={request.id}>
             <td className="whitespace-nowrap py-4 px-3 text-sm text-gray-500">{request.created_at}</td>
+            <td className="whitespace-nowrap py-4 px-3 text-sm text-gray-500">{request.requestor_id}</td>
             <td className="whitespace-nowrap py-4 px-3 text-sm text-gray-500">{request.credential_type}</td>
             <td className="whitespace-nowrap py-4 px-3 text-sm text-gray-500">{request.issuer}</td>
             <td className="whitespace-nowrap py-4 px-3 text-sm text-gray-500">{request.status}</td>

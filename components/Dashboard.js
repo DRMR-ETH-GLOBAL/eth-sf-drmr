@@ -74,10 +74,10 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-        } */}
+        }
         <div className="mb-5 shadow sm:rounded-lg">
           <div className="px-4 py-5 sm:p-6">
-            <h3 className="text-lg font-medium leading-6 text-gray-900">Create Credential</h3>
+            <h3 className="text-lg font-medium leading-6 text-white">Request Credential</h3>
             <div className="mt-2 max-w-xl text-sm text-gray-500">
               <p>Verify your identity, residence, or other attributes and receive a DRMR credential.</p>
             </div>
@@ -90,7 +90,7 @@ const Dashboard = () => {
                 }}
               >
                 <PlusIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
-                Request Personal Credential
+                Request Credential
               </button>
             </div>
           </div>
@@ -98,7 +98,7 @@ const Dashboard = () => {
 
         <div className="mb-5 shadow sm:rounded-lg">
           <div className="px-4 py-5 sm:p-6">
-            <h3 className="text-lg font-medium leading-6 text-gray-900">Request Credential</h3>
+            <h3 className="text-lg font-medium leading-6 text-white">Request Credential From Third Party</h3>
             <div className="mt-2 max-w-xl text-sm text-gray-500">
               <p>Submit a request for a verified DRMR credential from another party.</p>
             </div>

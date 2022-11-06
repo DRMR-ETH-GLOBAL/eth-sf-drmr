@@ -12,7 +12,7 @@ const Credentials = ({ credential_requests }) => {
       <div>
         <div className="sm:flex sm:items-center">
           <div className="sm:flex-auto">
-            <h1 className="text-xl font-semibold text-gray-900">Request New Credential</h1>
+            <h1 className="text-xl font-semibold text-gray-900">Requested Credentials</h1>
           </div>
           <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
             <button
