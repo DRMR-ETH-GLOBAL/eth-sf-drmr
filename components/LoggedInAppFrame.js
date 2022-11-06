@@ -31,7 +31,7 @@ const LoggedInAppFrame = (props) => {
   return (
     <>
       <div className="min-h-full">
-        <Disclosure as="nav" className="border-b border-gray-200 bg-grey-900">
+        <Disclosure as="nav" className="border-b border-gray-800 bg-grey-900">
           {({ open }) => (
             <>
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -49,7 +49,7 @@ const LoggedInAppFrame = (props) => {
                           href={item.href}
                           className={classNames(
                             item.name == props.headerTitle
-                              ? 'border-blue-500 text-gray-900'
+                              ? 'border-blue-500 text-gray-500'
                               : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700',
                             'inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'
                           )}
