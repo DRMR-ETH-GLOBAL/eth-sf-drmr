@@ -75,7 +75,7 @@ const Dashboard = () => {
             </div>
           </div>
         } */}
-        <div className="mb-5 shadow sm:rounded-lg">
+        <div className="mb-5 shadow sm:rounded-lg bg-grey-900">
           <div className="px-4 py-5 sm:p-6">
             <h3 className="text-lg font-medium leading-6 text-white">Create Credential</h3>
             <div className="mt-2 max-w-xl text-sm text-gray-500">
@@ -96,7 +96,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="mb-5 shadow sm:rounded-lg">
+        <div className="mb-5 shadow sm:rounded-lg bg-grey-900">
           <div className="px-4 py-5 sm:p-6">
             <h3 className="text-lg font-medium leading-6 text-white">Request Credential</h3>
             <div className="mt-2 max-w-xl text-sm text-gray-500">
@@ -117,7 +117,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="mb-5 shadow sm:rounded-lg">
+        <div className="mb-5 shadow sm:rounded-lg bg-grey-900">
           <div className="px-4 py-5 sm:p-6">
             <h3 className="text-lg font-medium leading-6 text-white">Validate Credential</h3>
             <div className="mt-2 max-w-xl text-sm text-gray-500">
