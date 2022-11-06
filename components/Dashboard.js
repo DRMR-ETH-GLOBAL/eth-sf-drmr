@@ -18,34 +18,34 @@ const Dashboard = () => {
     activate(Injected)
   }
 
-  // useEffect(() => {
-  //   getPolygonIdIdentifier()
-  // }, [session])
+  useEffect(() => {
+    getPolygonIdIdentifier()
+  }, [session])
 
-  // async function getPolygonIdIdentifier() {
-  //   try {
-  //     setLoading(true)
+  async function getPolygonIdIdentifier() {
+    try {
+      setLoading(true)
 
-  //     let { data, error, status } = await supabase
-  //       .from('profiles')
-  //       .select(`polygon_id_identifier`)
-  //       .eq('id', session.user.id)
-  //       .single()
+      let { data, error, status } = await supabase
+        .from('profiles')
+        .select(`polygon_id_identifier`)
+        .eq('id', session.user.id)
+        .single()
 
-  //     if (error && status !== 406) {
-  //       throw error
-  //     }
+      if (error && status !== 406) {
+        throw error
+      }
 
-  //     if (data && data.polygon_id_identifier != null) {
-  //       setHasPolygonId(true)
-  //     }
-  //   } catch (error) {
-  //     alert('Error loading user data!')
-  //     console.log(error)
-  //   } finally {
-  //     setLoading(false)
-  //   }
-  // }
+      if (data && data.polygon_id_identifier != null) {
+        setHasPolygonId(true)
+      }
+    } catch (error) {
+      alert('Error loading user data!')
+      console.log(error)
+    } finally {
+      setLoading(false)
+    }
+  }
 
   return (
     <LoggedInAppFrame headerTitle="Dashboard">
@@ -77,7 +77,7 @@ const Dashboard = () => {
         }
         <div className="mb-5 bg-white shadow sm:rounded-lg">
           <div className="px-4 py-5 sm:p-6">
-            <h3 className="text-lg font-medium leading-6 text-gray-900">Create Credential</h3>
+            <h3 className="text-lg font-medium leading-6 text-gray-900">Request Personal Credential</h3>
             <div className="mt-2 max-w-xl text-sm text-gray-500">
               <p>Verify your identity, residence, or other attributes and receive a DRMR credential.</p>
             </div>
@@ -86,11 +86,11 @@ const Dashboard = () => {
                 type="button"
                 className="inline-flex items-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                 onClick={async (evt) => {
-                  router.replace(`/credentials/create`)
+                  router.replace(`/credentials/request`)
                 }}
               >
                 <PlusIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
-                Create
+                Request Personal Credential
               </button>
             </div>
           </div>
@@ -98,7 +98,7 @@ const Dashboard = () => {
 
         <div className="mb-5 bg-white shadow sm:rounded-lg">
           <div className="px-4 py-5 sm:p-6">
-            <h3 className="text-lg font-medium leading-6 text-gray-900">Request Credential</h3>
+            <h3 className="text-lg font-medium leading-6 text-gray-900">Request Third Party Credential</h3>
             <div className="mt-2 max-w-xl text-sm text-gray-500">
               <p>Submit a request for a verified DRMR credential from another party.</p>
             </div>
@@ -111,7 +111,7 @@ const Dashboard = () => {
                 }}
               >
                 <PlusIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
-                Request
+                Request Third Party Credential
               </button>
             </div>
           </div>
@@ -133,7 +133,7 @@ const Dashboard = () => {
               >
 
                 <CheckIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
-                Validate
+                Validate Credential
               </button>
             </div>
           </div>

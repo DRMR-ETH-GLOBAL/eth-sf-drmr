@@ -4,14 +4,7 @@ import { PlusIcon, CheckIcon } from '@heroicons/react/20/solid'
 import { useRouter } from 'next/router'
 import CredentialRequestList from '../../components/credentials/CredentialRequestList'
 
-// const people = [
-//   { name: 'Lindsay Walton', title: 'Front-end Developer', email: 'lindsay.walton@example.com', role: 'Member' },
-//   { name: 'Lindsay Walton', title: 'Front-end Developer', email: 'lindsay.walton@example.com', role: 'Member' },
-//   { name: 'Lindsay Walton', title: 'Front-end Developer', email: 'lindsay.walton@example.com', role: 'Member' },
-//   { name: 'Lindsay Walton', title: 'Front-end Developer', email: 'lindsay.walton@example.com', role: 'Member' },
-// ]
-
-const Credentials = ({ credentials, credential_requests }) => {
+const Credentials = ({ credential_requests }) => {
   const router = useRouter()
 
   return (
@@ -19,7 +12,7 @@ const Credentials = ({ credentials, credential_requests }) => {
       <div>
         <div className="sm:flex sm:items-center">
           <div className="sm:flex-auto">
-            <h1 className="text-xl font-semibold text-gray-900">Credentials</h1>
+            <h1 className="text-xl font-semibold text-gray-900">Request New Credential</h1>
           </div>
           <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
             <button
@@ -39,7 +32,6 @@ const Credentials = ({ credentials, credential_requests }) => {
         <div className="mt-8 flex flex-col">
           <div className="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-              <h3>Requests</h3>
               <CredentialRequestList requests={credential_requests} />
             </div>
           </div>

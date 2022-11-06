@@ -9,6 +9,7 @@ export default function Account({ session, user }) {
   const [website, setWebsite] = useState(null)
   const [avatar_url, setAvatarUrl] = useState(null)
   const [is_distributor, setIsDistributor] = useState(null)
+  const [polygonId, setPolygonId] = useState(null)
 
   useEffect(() => {
     getProfile()
@@ -20,7 +21,7 @@ export default function Account({ session, user }) {
 
       let { data, error, status } = await supabase
         .from('profiles')
-        .select(`username, website, avatar_url, is_distributor`)
+        .select(`is_distributor, polygon_id_identifier`)
         .eq('id', user.id)
         .single()
 
@@ -29,10 +30,8 @@ export default function Account({ session, user }) {
       }
 
       if (data) {
-        setUsername(data.username)
-        setWebsite(data.website)
-        setAvatarUrl(data.avatar_url)
         setIsDistributor(data.is_distributor)
+        setPolygonId(data.polygon_id_identifier)
       }
     } catch (error) {
       alert('Error loading user data!')
@@ -42,15 +41,13 @@ export default function Account({ session, user }) {
     }
   }
 
-  async function updateProfile({ username, website, avatar_url }) {
+  async function updateProfile({ polygonId }) {
     try {
       setLoading(true)
 
       const updates = {
         id: user.id,
-        username,
-        website,
-        avatar_url,
+        polygon_id_identifier: polygonId,
         updated_at: new Date().toISOString(),
       }
 
@@ -70,7 +67,6 @@ export default function Account({ session, user }) {
       <div className="form-widget">
         <div>
           <label htmlFor="email">Email</label>
-          {/* <input id="email" type="text" value={'wtf'} disabled /> */}
           <input id="email" type="text" value={session.user.email} disabled />
         </div>
         <div>
@@ -82,24 +78,22 @@ export default function Account({ session, user }) {
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
+
         <div>
-          <label htmlFor="website">Website</label>
+          <label htmlFor="polygonId">Polygon ID</label>
           <input
-            id="website"
-            type="website"
-            value={website || ''}
-            onChange={(e) => setWebsite(e.target.value)}
+            id="polygonId"
+            type="polygonId"
+            value={polygonId || ''}
+            onChange={(e) => setPolygonId(e.target.value)}
           />
         </div>
 
         <div>
-          <div>Is Distributor: {is_distributor ? 'Yes' : 'No'}</div>
-        </div>
-
-        <div>
           <button
-            className="button primary block"
-            onClick={() => updateProfile({ username, website, avatar_url })}
+            type="button"
+            className="inline-flex items-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            onClick={() => updateProfile({ polygonId })}
             disabled={loading}
           >
             {loading ? 'Loading ...' : 'Update'}
@@ -108,7 +102,8 @@ export default function Account({ session, user }) {
 
         <div>
           <button
-            className="button block"
+            type="button"
+            className="inline-flex items-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             onClick={() => supabase.auth.signOut()}
           >
             Sign Out

@@ -21,7 +21,7 @@ const CredentialRequestList = ({ requests }) => {
             Status
           </th>
           <th scope="col" className="relative py-3.5 pl-3 pr-4 sm:pr-6 md:pr-0">
-            <span className="sr-only">Edit</span>
+            <span className="sr-only">Claim</span>
           </th>
         </tr>
       </thead>
@@ -32,9 +32,9 @@ const CredentialRequestList = ({ requests }) => {
             <td className="whitespace-nowrap py-4 px-3 text-sm text-gray-500">{request.credential_type}</td>
             <td className="whitespace-nowrap py-4 px-3 text-sm text-gray-500">{request.issuer}</td>
             <td className="whitespace-nowrap py-4 px-3 text-sm text-gray-500">{request.status}</td>
-            {request.status == 'GRANTED' &&
+            {request.status == 'READY TO CLAIM' &&
               <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6 md:pr-0">
-                <a href="#" className="text-blue-600 hover:text-blue-900">
+                <a target="_blank" href={request.claim_url} className="text-blue-600 hover:text-blue-900">
                   Claim<span className="sr-only">, {request.id}</span>
                 </a>
               </td>
