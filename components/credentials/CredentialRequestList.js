@@ -1,8 +1,9 @@
 import { supabase } from '../../supabase-client'
 import { useRouter } from 'next/router'
 
-const CredentialRequestList = ({ requests }) => {
+const CredentialRequestList = ({ requests, session }) => {
   const router = useRouter()
+
   return (
     <table className="min-w-full divide-y divide-gray-300">
       <thead>
@@ -13,6 +14,7 @@ const CredentialRequestList = ({ requests }) => {
           >
             Created
           </th>
+
           <th scope="col" className="py-3.5 px-3 text-left text-sm font-semibold text-gray-900">
             Requestor
           </th>
@@ -34,7 +36,7 @@ const CredentialRequestList = ({ requests }) => {
         {requests.map((request) => (
           <tr key={request.id}>
             <td className="whitespace-nowrap py-4 px-3 text-sm text-gray-500">{request.created_at}</td>
-            <td className="whitespace-nowrap py-4 px-3 text-sm text-gray-500">{request.requestor_id}</td>
+            <td className="whitespace-nowrap py-4 px-3 text-sm text-gray-500">{request.requestor_email}</td>
             <td className="whitespace-nowrap py-4 px-3 text-sm text-gray-500">{request.credential_type}</td>
             <td className="whitespace-nowrap py-4 px-3 text-sm text-gray-500">{request.issuer}</td>
             <td className="whitespace-nowrap py-4 px-3 text-sm text-gray-500">{request.status}</td>
@@ -52,6 +54,25 @@ const CredentialRequestList = ({ requests }) => {
                     router.replace(`/credentials`)
                   }}
                 >Cancel<span className="sr-only">, {request.id}</span>
+                </a>
+              </td>
+            }
+            {request.status == 'REQUESTED' &&
+              <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6 md:pr-0">
+                <a
+                  className="text-red-600 hover:text-red-900"
+                  href="#"
+                  onClick={async (evt) => {
+                    const { data, error } = await supabase
+                      .from('credential_requests')
+                      .update({
+                        status: 'PENDING REVIEW'
+                      })
+                      .match({ id: request.id })
+
+                    router.replace(`/credentials`)
+                  }}
+                >Get Credential<span className="sr-only">, {request.id}</span>
                 </a>
               </td>
             }

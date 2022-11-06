@@ -77,7 +77,7 @@ const Dashboard = () => {
         }
         <div className="mb-5 shadow sm:rounded-lg">
           <div className="px-4 py-5 sm:p-6">
-            <h3 className="text-lg font-medium leading-6 text-white">Request Credential</h3>
+            <h3 className="text-lg font-medium leading-6 text-white">Request Own Credential</h3>
             <div className="mt-2 max-w-xl text-sm text-gray-500">
               <p>Verify your identity, residence, or other attributes and receive a DRMR credential.</p>
             </div>
@@ -90,7 +90,7 @@ const Dashboard = () => {
                 }}
               >
                 <PlusIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
-                Request Credential
+                Request Own Credential
               </button>
             </div>
           </div>
@@ -107,7 +107,7 @@ const Dashboard = () => {
                 type="button"
                 className="btn-primary"
                 onClick={async (evt) => {
-                  router.replace(`/credentials/request`)
+                  router.replace(`/credentials/request-third-party`)
                 }}
               >
                 <PlusIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />

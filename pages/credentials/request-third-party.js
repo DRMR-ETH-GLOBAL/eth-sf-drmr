@@ -25,15 +25,18 @@ const issuers = [
 export default function NewTokenPlan() {
   const [issuerSelected, setIssuerSelected] = useState(issuers[0])
   const [typeSelected, setTypeSelected] = useState(attributes[0])
+  const [thirdPartyEmail, setThirdPartyEmail] = useState(null)
   const router = useRouter()
   const session = useSession()
 
   return (
-    <LoggedInAppFrame headerTitle="Request new credential">
+    <LoggedInAppFrame headerTitle="Request third party credential">
       <div>
         <CredentialRequestForm
           heading="Request new credential"
-          thirdPartyRequest={false}
+          thirdPartyEmail={thirdPartyEmail}
+          setThirdPartyEmail={setThirdPartyEmail}
+          requestThirdParty={true}
           attributes={attributes}
           typeSelected={typeSelected}
           setTypeSelected={setTypeSelected}
@@ -42,18 +45,18 @@ export default function NewTokenPlan() {
           setIssuerSelected={setIssuerSelected}
           onSubmit={async (evt) => {
             evt.preventDefault();
+
             const { data, error } = await supabase
               .from('credential_requests')
               .insert({
                 credential_type: typeSelected.name,
                 issuer: issuerSelected.name,
+                requestor_id: session.user.id,
                 requestor_email: session.user.email,
-                user_id: session.user.id,
-                status: 'PENDING REVIEW'
+                requested_third_party_email: thirdPartyEmail,
+                status: 'REQUESTED'
               })
 
-            // console.log('data: ', data)
-            // console.log('error: ', error)
             router.push('/credentials')
           }}
         />

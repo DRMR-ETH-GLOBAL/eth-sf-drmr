@@ -4,6 +4,9 @@ import { useRouter } from 'next/router'
 
 export default function CredentialForm({
   attributes,
+  thirdPartyEmail,
+  setThirdPartyEmail,
+  requestThirdParty,
   heading,
   typeSelected,
   setTypeSelected,
@@ -24,6 +27,29 @@ export default function CredentialForm({
               Please provide the requested information.
             </p>
           </div>
+
+          {requestThirdParty &&
+            <div className="space-y-6 sm:space-y-5">
+              <div className="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
+                <label htmlFor="username" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                  Email of Third Party
+                </label>
+                <div className="mt-1 sm:col-span-2 sm:mt-0">
+                  <div className="flex max-w-lg rounded-md shadow-sm">
+                    <input
+                      type="email"
+                      value={thirdPartyEmail || ''}
+                      name="email"
+                      id="email"
+                      className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                      placeholder="you@example.com"
+                      onChange={(e) => setThirdPartyEmail(e.target.value)}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          }
 
           <div className="space-y-6 sm:space-y-5">
             <div className="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
