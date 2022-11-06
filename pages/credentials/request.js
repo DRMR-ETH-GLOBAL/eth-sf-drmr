@@ -16,6 +16,7 @@ const attributes = [
   { id: 8, name: 'Bitcoin Address', requiredDocumentation: '' },
   { id: 9, name: 'IPFS Address', requiredDocumentation: '' },
   { id: 10, name: 'ENS Address', requiredDocumentation: '' },
+  { id: 11, name: 'Apecoin Ownership', requiredDocumentation: '' },
 ]
 
 const issuers = [
