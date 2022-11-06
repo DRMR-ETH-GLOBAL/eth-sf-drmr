@@ -1,6 +1,8 @@
-import CredentialRequestListItem from './CredentialRequestListItem'
+import { supabase } from '../../supabase-client'
+import { useRouter } from 'next/router'
 
 const CredentialRequestList = ({ requests }) => {
+  const router = useRouter()
   return (
     <table className="min-w-full divide-y divide-gray-300">
       <thead>
@@ -32,6 +34,23 @@ const CredentialRequestList = ({ requests }) => {
             <td className="whitespace-nowrap py-4 px-3 text-sm text-gray-500">{request.credential_type}</td>
             <td className="whitespace-nowrap py-4 px-3 text-sm text-gray-500">{request.issuer}</td>
             <td className="whitespace-nowrap py-4 px-3 text-sm text-gray-500">{request.status}</td>
+            {request.status == 'PENDING REVIEW' &&
+              <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6 md:pr-0">
+                <a
+                  className="text-red-600 hover:text-red-900"
+                  href="#"
+                  onClick={async (evt) => {
+                    const { data, error } = await supabase
+                      .from('credential_requests')
+                      .delete()
+                      .match({ id: request.id })
+
+                    router.replace(`/credentials`)
+                  }}
+                >Cancel<span className="sr-only">, {request.id}</span>
+                </a>
+              </td>
+            }
             {request.status == 'READY TO CLAIM' &&
               <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6 md:pr-0">
                 <a target="_blank" href={request.claim_url} className="text-blue-600 hover:text-blue-900">
@@ -40,9 +59,10 @@ const CredentialRequestList = ({ requests }) => {
               </td>
             }
           </tr>
-        ))}
-      </tbody>
-    </table>
+        ))
+        }
+      </tbody >
+    </table >
   )
 }
 
