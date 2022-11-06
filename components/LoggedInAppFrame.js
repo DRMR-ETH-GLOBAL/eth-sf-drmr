@@ -30,7 +30,7 @@ const LoggedInAppFrame = (props) => {
   return (
     <>
       <div className="min-h-full">
-        <Disclosure as="nav" className="border-b border-gray-200 bg-grey-900">
+        <Disclosure as="nav" className="border-b border-gray-800 bg-grey-900">
           {({ open }) => (
             <>
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -48,8 +48,8 @@ const LoggedInAppFrame = (props) => {
                           href={item.href}
                           className={classNames(
                             item.name == props.headerTitle
-                              ? 'border-blue-500 text-gray-900'
-                              : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700',
+                              ? 'border-greene text-greene'
+                              : 'border-transparent text-gray-500 hover:border-gray-700 hover:text-gray-400',
                             'inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'
                           )}
                           aria-current={item.current ? 'page' : undefined}
@@ -62,7 +62,7 @@ const LoggedInAppFrame = (props) => {
                   <div className="hidden sm:ml-6 sm:flex sm:items-center">
                     <button
                       type="button"
-                      className="rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                      className="rounded-full bg-grey-800 p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-greene focus:ring-offset-2"
                     >
                       <span className="sr-only">View notifications</span>
                       <BellIcon className="h-6 w-6" aria-hidden="true" />
@@ -71,11 +71,11 @@ const LoggedInAppFrame = (props) => {
                     {/* Profile dropdown */}
                     <Menu as="div" className="relative ml-3">
                       <div>
-                        <Menu.Button className="flex max-w-xs items-center rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                        <Menu.Button className="flex max-w-xs items-center rounded-full bg-grey-800 text-sm focus:outline-none focus:ring-2 focus:ring-greene focus:ring-offset-2">
                           {/* <span className="sr-only">Open user menu</span>
                           <img className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" /> */}
-                          <span className="inline-block h-10 w-10 overflow-hidden rounded-full bg-gray-100">
-                            <svg className="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                          <span className="inline-block h-10 w-10 overflow-hidden rounded-full bg-grey-800">
+                            <svg className="h-full w-full text-grey-600" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
                             </svg>
                           </span>
@@ -90,15 +90,15 @@ const LoggedInAppFrame = (props) => {
                         leaveFrom="transform opacity-100 scale-100"
                         leaveTo="transform opacity-0 scale-95"
                       >
-                        <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                        <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-grey-900 py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                           {userNavigation.map((item) => (
                             <Menu.Item key={item.name}>
                               {({ active }) => (
                                 <a
                                   href={item.href}
                                   className={classNames(
-                                    active ? 'bg-gray-100' : '',
-                                    'block px-4 py-2 text-sm text-gray-700'
+                                    active ? 'bg-grey-700' : 'bg-grey-700',
+                                    'block px-4 py-2 text-sm text-gray-300'
                                   )}
                                 >
                                   {item.name}
@@ -154,7 +154,7 @@ const LoggedInAppFrame = (props) => {
                     </div>
                     <button
                       type="button"
-                      className="ml-auto flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                      className="ml-auto flex-shrink-0 rounded-full bg-grey-700 p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                     >
                       <span className="sr-only">View notifications</span>
                       <BellIcon className="h-6 w-6" aria-hidden="true" />

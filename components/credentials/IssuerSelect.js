@@ -15,10 +15,10 @@ export default function IssuerSelect({
     <Listbox value={selected} onChange={setSelected}>
       {({ open }) => (
         <>
-          <Listbox.Label className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">Issuer</Listbox.Label>
+          <Listbox.Label className="block text-sm font-medium text-white sm:mt-px sm:pt-2">Issuer</Listbox.Label>
           <div className="relative mt-1">
-            <Listbox.Button className="relative w-full cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm">
-              <span className="block truncate">{selected.name}</span>
+            <Listbox.Button className="relative w-full cursor-default rounded-md border border-grey-600 bg-grey-900 py-2 pl-3 pr-10 text-left shadow-sm focus:border-greene focus:outline-none focus:ring-1 focus:ring-greene sm:text-sm">
+              <span className="block truncate text-white">{selected.name}</span>
               <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                 <ChevronUpDownIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
               </span>
@@ -31,13 +31,13 @@ export default function IssuerSelect({
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+              <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-grey-800 py-1 text-gray-300 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                 {issuers.map((attribute) => (
                   <Listbox.Option
                     key={attribute.id}
                     className={({ active }) =>
                       classNames(
-                        active ? 'text-white bg-indigo-600' : 'text-gray-900',
+                        active ? 'text-grey-1000 bg-greene' : 'text-gray-300',
                         'relative cursor-default select-none py-2 pl-3 pr-9'
                       )
                     }
@@ -52,7 +52,7 @@ export default function IssuerSelect({
                         {selected ? (
                           <span
                             className={classNames(
-                              active ? 'text-white' : 'text-indigo-600',
+                              active ? 'text-grey-1000' : 'text-white',
                               'absolute inset-y-0 right-0 flex items-center pr-4'
                             )}
                           >
