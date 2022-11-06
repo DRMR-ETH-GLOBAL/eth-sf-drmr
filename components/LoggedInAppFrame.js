@@ -12,8 +12,9 @@ const user = {
 
 const navigation = [
   { name: 'Dashboard', href: '/', current: true },
-  { name: 'Certificates', href: '/certificates', current: false },
-  { name: 'Validations', href: '/validations', current: false },
+  { name: 'Credentials', href: '/credentials', current: false },
+  { name: 'Request', href: '/credentials/request', current: false },
+  { name: 'Validate', href: '/validate/validate', current: false },
 ]
 const userNavigation = [
   { name: 'Account', href: '/account' },
@@ -177,7 +178,7 @@ const LoggedInAppFrame = (props) => {
           )}
         </Disclosure>
 
-        <div className="py-10">
+        <div className="py-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* <header>
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <h1 className="text-3xl font-bold leading-tight tracking-tight text-gray-900">{props.headerTitle}</h1>
