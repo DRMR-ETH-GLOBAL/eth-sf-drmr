@@ -7,7 +7,7 @@ export default function Header() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6">
-      <Popover className="relative bg-white">
+      <Popover className="relative bg-grey-900">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
             <div className="flex justify-start lg:w-0 lg:flex-1">

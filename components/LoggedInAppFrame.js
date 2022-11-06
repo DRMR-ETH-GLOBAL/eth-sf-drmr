@@ -2,6 +2,7 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import Logo from './Logo'
 
 const user = {
   name: 'Tom Cook',
@@ -30,15 +31,15 @@ const LoggedInAppFrame = (props) => {
   return (
     <>
       <div className="min-h-full">
-        <Disclosure as="nav" className="border-b border-gray-200 bg-white">
+        <Disclosure as="nav" className="border-b border-gray-200 bg-grey-900">
           {({ open }) => (
             <>
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 justify-between">
                   <div className="flex">
                     <div className="flex flex-shrink-0 items-center">
-                      <a href="/" className="text-2xl font-medium text-gray-500 hover:text-gray-900">
-                        DRMR
+                      <a href="/">
+                        <Logo className="h-10 w-auto" />
                       </a>
                     </div>
                     <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">

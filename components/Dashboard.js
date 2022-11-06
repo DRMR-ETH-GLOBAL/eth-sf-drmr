@@ -75,16 +75,16 @@ const Dashboard = () => {
             </div>
           </div>
         } */}
-        <div className="mb-5 bg-white shadow sm:rounded-lg">
+        <div className="mb-5 shadow sm:rounded-lg">
           <div className="px-4 py-5 sm:p-6">
-            <h3 className="text-lg font-medium leading-6 text-gray-900">Create Credential</h3>
+            <h3 className="text-lg font-medium leading-6 text-white">Create Credential</h3>
             <div className="mt-2 max-w-xl text-sm text-gray-500">
               <p>Verify your identity, residence, or other attributes and receive a DRMR credential.</p>
             </div>
             <div className="mt-5">
               <button
                 type="button"
-                className="inline-flex items-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                className="btn-primary"
                 onClick={async (evt) => {
                   router.replace(`/credentials/create`)
                 }}
@@ -96,16 +96,16 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="mb-5 bg-white shadow sm:rounded-lg">
+        <div className="mb-5 shadow sm:rounded-lg">
           <div className="px-4 py-5 sm:p-6">
-            <h3 className="text-lg font-medium leading-6 text-gray-900">Request Credential</h3>
+            <h3 className="text-lg font-medium leading-6 text-white">Request Credential</h3>
             <div className="mt-2 max-w-xl text-sm text-gray-500">
               <p>Submit a request for a verified DRMR credential from another party.</p>
             </div>
             <div className="mt-5">
               <button
                 type="button"
-                className="inline-flex items-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                className="btn-primary"
                 onClick={async (evt) => {
                   router.replace(`/credentials/request`)
                 }}
@@ -117,16 +117,16 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="mb-5 bg-white shadow sm:rounded-lg">
+        <div className="mb-5 shadow sm:rounded-lg">
           <div className="px-4 py-5 sm:p-6">
-            <h3 className="text-lg font-medium leading-6 text-gray-900">Validate Credential</h3>
+            <h3 className="text-lg font-medium leading-6 text-white">Validate Credential</h3>
             <div className="mt-2 max-w-xl text-sm text-gray-500">
               <p>Validate the verification status of an existing DRMR credential.</p>
             </div>
             <div className="mt-5">
               <button
                 type="button"
-                className="inline-flex items-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                className="btn-primary"
                 onClick={async (evt) => {
                   router.replace(`/credentials/validate`)
                 }}
@@ -144,4 +144,3 @@ const Dashboard = () => {
 }
 
 export default Dashboard
-
