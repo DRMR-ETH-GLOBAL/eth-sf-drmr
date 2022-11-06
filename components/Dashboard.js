@@ -116,28 +116,6 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-
-        <div className="mb-5 shadow sm:rounded-lg bg-grey-900">
-          <div className="px-4 py-5 sm:p-6">
-            <h3 className="text-lg font-medium leading-6 text-white">Validate Credential</h3>
-            <div className="mt-2 max-w-xl text-sm text-gray-500">
-              <p>Validate the verification status of an existing DRMR credential.</p>
-            </div>
-            <div className="mt-5">
-              <button
-                type="button"
-                className="btn-primary"
-                onClick={async (evt) => {
-                  router.replace(`/credentials/validate`)
-                }}
-              >
-
-                <CheckIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
-                Validate Credential
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     </LoggedInAppFrame >
   )
